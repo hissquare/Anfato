@@ -11,38 +11,15 @@ Goes through English words finding names that are available and allowed
 ## About Anfato
 
 ### Installation Guide Below
-Ever wanted to simply generate a username with little to no hassle? Or maybe you are tired of using the awful username generators on websites.
-Nameize is an open-source python project that goes through a list of English words, checks if they are available then checks if they are allowed on roblox.
+anfato is cool
 
 <img src="https://honestly.please-end.me/2gNWcL.png">
 
 The bot will give names such as: *unhopefulness, unawardably, conjunctional* (anything in the list of English words that isn't taken and appropriate)
 
-## Getting Started
 
-### Installation
 
-This is an example of how to list things you need to use the software and how to install them.
-1. Download Python 3 (Install to PATH) [https://www.python.org/ftp/python/3.9.4/python-3.9.4-amd64.exe](https://www.python.org/ftp/python/3.9.4/python-3.9.4-amd64.exe)
-2. Clone the repo or download the python file 
-  ```sh
-    git clone https://github.com/hissquare/Anfato.git ( download https://git-scm.com/download/win )
-  ```
-3. Open command prompt (cmd) and go to the directory you downloaded it at
-  ```sh
-    cd C:\Users\user\Documents\Folder | example: cd C:\Users\AmongUs\Anfato
-  ```
-4. Install requirements
-  ```sh
-    py -m pip install -r requirements.txt
-  ```
-5. Run the program
-  ```sh
-    python Anfato.py
-  ```
-  
-## Contact
-DM me on discord at viper#0010
+
   
 ## License
 
