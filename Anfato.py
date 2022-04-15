@@ -84,7 +84,7 @@ def usergen(users_wanted, character_limit, minimum_limit):
                             f.write(f"{name}\n")
                         final_list.append(name)
                     else:
-                        print(style.RED + f"{name} is a censored")
+                        print(style.RED + f"{name} is censored")
                 moderated_list.remove(name)
             checking = False
     
