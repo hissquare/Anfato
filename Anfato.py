@@ -1,11 +1,108 @@
-# Python code obfuscated by www.development-tools.net 
- 
+# :\\__ RBXNameize [Roblox Name Finder]
+# :\\__ Viperize - MIT License
+# :\\_ hissquare - Forker
+#--------------------------------------------------------------------------------
+# | Imports
 
-import base64, codecs
-magic = 'IiIjbGluZTo0DQpfX2FsbF9fID1bXSNsaW5lOjYNCmNsYXNzIE9PT09PMDBPMDBPMDAwME8wIDojbGluZTo4DQogICAgIiIjbGluZTo5DQogICAgZGVmIF9faW5pdF9fIChPT09PMDAwME9PT08wMDAwMCAsT09PTzBPME9PME8wT08wME8gKTojbGluZToxMQ0KICAgICAgICBPT09PMDAwME9PT08wMDAwMCAuX19PT08wME8wMDBPME9PTzAwMCA9T09PTzBPME9PME8wT08wME8gI2xpbmU6MTMNCiAgICAgICAgT09PTzAwMDBPT09PMDAwMDAgLl9fTzBPMDAwTzBPMDAwTzBPT08gPTAgI2xpbmU6MTQNCiAgICAgICAgT09PTzAwMDBPT09PMDAwMDAgLl9fT08wME9PTzAwTzBPTzBPT08gKCkjbGluZToxNQ0KICAgIGRlZiBfX09PMDBPT08wME8wT08wT09PIChPME8wT08wMDAwT09PTzBPTyApOiNsaW5lOjE3DQogICAgICAgICIiI2xpbmU6MTgNCiAgICAgICAgT09PT09PT08wT09PTzAwME8gPVstMSBdKk8wTzBPTzAwMDBPT09PME9PIC5fX09PTzAwTzAwME8wT09PMDAwICNsaW5lOjE5DQogICAgICAgIE8wTzBPTzAwMDBPT09PME9PIC5fX08wMDAwMDBPT09PMDAwTzBPIChPT09PT09PTzBPT09PMDAwTyAsMCApI2xpbmU6MjANCiAgICAgICAgcHJpbnQgKCJGb3VuZCIsTzBPME9PMDAwME9PT08wT08gLl9fTzBPMDAwTzBPMDAwTzBPT08gLCJzb2x1dGlvbnMuIikjbGluZToyMQ0KICAgIGRlZiBfX08wMDAwMDBPT09PMDAwTzBPIChPTzAwTzAwME9PMDBPME8wTyAsT09PTzBPME8wT09PTzAwME8gLE9PT08wME9PTzAwT08wT08wICk6I2xpbmU6MjMNCiAgICAgICAgIiIjbGluZToyOA0KICAgICA'
-love = 'tVPOcMvOCG09CZQOCG08jZR9CZR9CZPN9CH9CZQOCZQNjG08jZR8jGmOCVP5sK09CGmNjGmNjZR8jG09CZQNjVQbwoTyhMGbmZN0XVPNtVPNtVPNtVPNtG08jZR8jZQOCGmNjGmOCZR8tYy9sG09CG08jG08jZR9CGmOCZQNtXR9CG08jGmOCZR9CG08jZQOCVPxwoTyhMGbmZD0XVPNtVPNtVPNtVPNtG08jZR8jZQOCGmNjGmOCZR8tYy9sGmOCZQNjGmOCZQNjGmOCG08tXm0kVPAfnJ5yBwZlQDbtVPNtVPNtVTIfp2HtBvAfnJ5yBwZmQDbtVPNtVPNtVPNtVPOzo3VtGmNjZQNjGmOCZQNjGmOCZR8tnJ4tpzShM2HtXR9CZQOCZQNjG08jZR8jGmOCVP5sK09CGmNjGmNjZR8jG09CZQNjVPx6V2kcozH6ZmHAPvNtVPNtVPNtVPNtVPNtVPOcMvOCGmNjGmNjZR9CZQOCZR8jGlNhK19CGmOCZR8jZQNjGmNjZR9CZPNbG09CGmOCZR8jG09CGmNjZR8tYR9CG08jZR9CGmNjG08jG08jVPkCZQNjZQOCZR8jZQOCZR8jGlNcBvAfnJ5yBwZ3QDbtVPNtVPNtVPNtVPNtVPNtVPNtVR9CG08jGmOCZR9CG08jZQOCVSgCG09CZQOCG08jZR9CZR9CZPOqCH8jZQNjZR8jGmNjZR8jGmOCVPAfnJ5yBwZ4QDbtVPNtVPNtVPNtVPNtVPNtVPNtVR9CZQOCZQNjG08jZR8jGmOCVP5sK08jZQNjZQOCG09CZQNjGmOCVPuCG09CZR8jGmOCG09CZQNjGlNfG09CGmNjG09CZQOCGmOCGmNtXmRtXFAfnJ5yBwZ5QDbtVPNtMTIzVS9sG08jGmOCZQNjZR8jZQOCGmNtXR8jG09CZR8jG08jZQNjG08jVPkCGmNjGmNjG08jZR8jZQNjGlNfGmNjZR9CG08jGmOCGmNjGmNtYR9CZR9CG09CZQNjG08jGmNjVPx6V2kcozH6AQVAPvNtVPNtVPNtVv'
-god = 'IjbGluZTo0Ng0KICAgICAgICBmb3IgTzBPTzBPME9PMDBPMDAwMDAgaW4gcmFuZ2UgKE8wMDBPT09PME8wT08wME8wICk6I2xpbmU6NDcNCiAgICAgICAgICAgIGlmIE9PMDBPMDBPTzAwTzAwMDBPIFtPME9PME8wT08wME8wMDAwMCBdPT1PTzBPT09PTzAwME9PME8wMCBvciBPTzAwTzAwT08wME8wMDAwTyBbTzBPTzBPME9PMDBPMDAwMDAgXS1PME9PME8wT08wME8wMDAwMCA9PU9PME9PT09PMDAwT08wTzAwIC1PMDAwT09PTzBPME9PMDBPMCBvciBPTzAwTzAwT08wME8wMDAwTyBbTzBPTzBPME9PMDBPMDAwMDAgXStPME9PME8wT08wME8wMDAwMCA9PU9PME9PT09PMDAwT08wTzAwICtPMDAwT09PTzBPME9PMDBPMCA6I2xpbmU6NTANCiAgICAgICAgICAgICAgICByZXR1cm4gRmFsc2UgI2xpbmU6NTINCiAgICAgICAgcmV0dXJuIFRydWUgI2xpbmU6NTMNCiAgICBkZWYgX19PT09PTzBPTzAwT09PME8wMCAoT08wMDBPMDBPTzAwMDBPME8gLE8wMDAwT09PTzBPTzBPTzBPICk6I2xpbmU6NTUNCiAgICAgICAgIiIjbGluZTo1Ng0KICAgICAgICBmb3IgT09PTzBPMDBPME9PMDBPT08gaW4gcmFuZ2UgKE9PMDAwTzAwT08wMDAwTzBPIC5fX09PTzAwTzAwME8wT09PMDAwICk6I2xpbmU6NTcNCiAgICAgICAgICAgIE8wMDBPTzAwT08wMDBPME9PID0iIiNsaW5lOjU4DQogICAgICAgICAgICBmb3IgT09PMDBPTzBPME8wME9PMDAgaW4gcmFuZ2UgKE9PMDAwTzAwT08wMDAwTzBPIC5fX09PTzAwTzAwME8wT09PMDAwICk6I2xpbmU6NTkNCiAgICAgICAgICAgICAgICBpZiBPMDAwME9PT08wT08wT'
-destiny = '08jGlOoG09CGmOCZQOCZR9CZQOCG08tKG09G09CZQOCGmOCZR8jZR9CZQNtBvAfnJ5yBwLjQDbtVPNtVPNtVPNtVPNtVPNtVPNtVR8jZQOCGmNjG08jZQOCZR9CVPf9VyRtVvAfnJ5yBwLkQDbtVPNtVPNtVPNtVPNtVPNtMJkmMFN6V2kcozH6AwVAPvNtVPNtVPNtVPNtVPNtVPNtVPNtGmNjZR9CZQOCGmNjZR8jG08tXm0vYvNvV2kcozH6AwZAPvNtVPNtVPNtVPNtVUOlnJ50VPuCZQNjG08jZR9CZQNjGmOCGlNcV2kcozH6AwDAPvNtVPNtVPNtpUWcoaDtXPWpovVcV2kcozH6AwHAPvNtVPOxMJLtK19CG09CGmOCG09CZR8jGmOCZPNbG09CZR8jZR8jZQOCZQOCGmNtYR8jG09CGmNjG08jG09CZR9CVPx6V2kcozH6AwpAPvNtVPNtVPNtVvVwoTyhMGb3ZD0XVPNtVPNtVPOCG09CZR9CZR8jGmOCZQNjZPN9VvVwoTyhMGb3Zt0XVPNtVPNtVPOzo3VtG08jGmOCZQOCG08jGmOCZR8tnJ4tpzShM2HtXR9CGmOCZQOCZQNjGmNjG08jVP5sK09CGmNjGmNjZR8jG09CZQNjVPx6V2kcozH6AmZAPvNtVPNtVPNtVPNtVR9CG08jG08jGmOCZR8jZQNjVPf9p3ElVPuCZR9CG08jZR9CZR9CGmOCGlOoG08jGmOCZQOCG08jGmOCZR8tKFxeVvNvV2kcozH6AmDAPvNtVPNtVPNtpUWcoaDtXR9CG08jG08jGmOCZR8jZQNjVPxwoTyhMGb3AD0XMTIzVR9CZR8jZQNjGmOCGmOCG08jVPtcBvAfnJ5yBwp3QDbtVPNtVvVwoTyhMGb3BN0XVPNtVR9CG09CZQOCZQOCZQNjZR8jVPt4VPxwoTyhMGb3BD0XnJLtK19hLJ1yK18tCG0vK19gLJyhK18vBvAfnJ5yBwtkQDbtVPNtG08jGmNjZQOCZR9CZR9CGmNtXPxwoTyhMGb4Zj0X'
-joy = '\x72\x6f\x74\x31\x33'
-trust = eval('\x6d\x61\x67\x69\x63') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x6c\x6f\x76\x65\x2c\x20\x6a\x6f\x79\x29') + eval('\x67\x6f\x64') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x64\x65\x73\x74\x69\x6e\x79\x2c\x20\x6a\x6f\x79\x29')
-eval(compile(base64.b64decode(eval('\x74\x72\x75\x73\x74')),'<string>','exec'))
+import requests, os, threading
+from time import sleep
+from random import choice
+from datetime import datetime
+
+#--------------------------------------------------------------------------------
+# | Main
+
+os.system("")
+
+class style():
+    BLACK = '\033[30m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    BLUE = '\033[34m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
+    WHITE = '\033[37m'
+    UNDERLINE = '\033[4m'
+    RESET = '\033[0m'
+
+#--------------------------------------------------------------------------------
+# | Commands
+
+anfato = requests.get("https://gist.githubusercontent.com/hissquare/fd0a20f0a38cf1e11bd0c5271c6af516/raw/0547f882d80ac2c928d6f713b256ca4c2c6f92f4/AnfatoAscii").text
+print(style.MAGENTA + f"{anfato}\n----------------------------------" + style.RESET)
+r = requests.get("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt")
+
+blacklisted_words = ['sex','shit','fag','cock','cum','homo','breast','tit','puss','weed','loli','pregnant',
+'shit','fuck','satan','ass','gay','slave','anal','rape','gass','sperm', 'dick','damn','gang','fack','molester','alcohol',
+'nigg','erect','gypsy','porn','suck','holic','tard','feck','clit','gas','corona','wank']
+counter = 0
+finished = False
+final_list = []
+
+def usergen(users_wanted, character_limit, minimum_limit):
+    time_started = datetime.now()
+    global counter, finished, final_list
+    checking = False
+    moderated_list = []
+    
+    while counter < users_wanted:
+        #add words
+        userlist = []
+        while len(userlist) <= 40:
+            word = choice(r.text.split("\n")).lower().replace("\r","")
+            if not any(bl_word in word for bl_word in blacklisted_words) and (len(word) <= character_limit and len(word) >= minimum_limit):
+                userlist.append(word)
+
+        #check if exist
+        payload = {"usernames": userlist}
+        try:
+            nr = requests.post("https://users.roblox.com/v1/usernames/users", data=payload).json()
+        except Exception as e:
+            print(f"Err with payload: {e}")
+
+        listbx = []
+        try:
+            for name in nr["data"]: 
+                listbx.append(name["requestedUsername"])
+            new_list = [x for x in userlist if x not in listbx]
+            for word in new_list:
+                moderated_list.append(word)
+        except:
+            new_list = []
+
+        #check if moderated
+        if not checking:
+            checking = True
+            for name in moderated_list:
+                mr = requests.get(f"https://auth.roblox.com/v2/usernames/validate?request.username={name}&request.birthday=01%2F01%2F2000&request.context=Signup").json()
+                if not finished:
+                    if mr["code"] == 0:
+                        counter += 1
+                        print(style.GREEN + f"{counter}) {name} added to the list")
+                        with open("./names.txt", "a") as f:
+                            f.write(f"{name}\n")
+                        final_list.append(name)
+                    else:
+                        print(style.RED + f"{name} is a censored")
+                moderated_list.remove(name)
+            checking = False
+    
+    if not finished:
+        finished = True
+        sleep(5)
+        final_list = str(final_list).replace("'","").replace("[","").replace("]","")
+        print(style.CYAN + f"Completed {counter} name/s in {round((datetime.now()-time_started).seconds/60)} minutes: {final_list}")
+
+
+wanted_users = int(input("Type below how many usernames you want. ( more usernames = longer waiting time ) = "))
+maximum_limit = int(input("How many characters at most of the username? ( 3 - 16 ) = "))
+minimum_limit = int(input("How many characters at least of the username? ( 3 - 16 ) = "))
+thread_amount = int(input("How many threads? ( 1-10 ) "))
+print("----------------------------------")
+
+threads = list()
+for i in range(thread_amount):
+    x = threading.Thread(target=usergen, args=(wanted_users, maximum_limit, minimum_limit))
+    threads.append(x)
+    x.start()
