@@ -29,7 +29,7 @@ class style():
 #--------------------------------------------------------------------------------
 # | Commands
 
-anfato = requests.get("https://gist.githubusercontent.com/hissquare/fd0a20f0a38cf1e11bd0c5271c6af516/raw/0547f882d80ac2c928d6f713b256ca4c2c6f92f4/AnfatoAscii").text
+anfato = requests.get("https://gist.githubusercontent.com/hissquare/0f06315bcc0796f6c75282068cae3cf8/raw/a4cb304ebc911087f434a7067379ddf09e1cc60e/AnfatoAsciiV2").text
 print(style.MAGENTA + f"{anfato}\n----------------------------------" + style.RESET)
 r = requests.get("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt")
 
