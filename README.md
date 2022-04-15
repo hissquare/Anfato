@@ -26,7 +26,7 @@ This is an example of how to list things you need to use the software and how to
 1. Download Python 3 (Install to PATH) [https://www.python.org/ftp/python/3.9.4/python-3.9.4-amd64.exe](https://www.python.org/ftp/python/3.9.4/python-3.9.4-amd64.exe)
 2. Clone the repo or download the python file 
   ```sh
-    git clone https://github.com/viperize/Nameize.git
+    git clone https://github.com/hissquare/Anfato.git ( download https://git-scm.com/download/win )
   ```
 3. Open command prompt (cmd) and go to the directory you downloaded it at
   ```sh
