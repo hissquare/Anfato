@@ -96,8 +96,8 @@ def usergen(users_wanted, character_limit, minimum_limit):
 
 
 wanted_users = int(input("Type below how many usernames you want. ( more usernames = longer waiting time ) = "))
-maximum_limit = int(input("How many characters at most of the username? ( 3 - 16 ) = "))
-minimum_limit = int(input("How many characters at least of the username? ( 3 - 16 ) = "))
+maximum_limit = int(input("How many characters at most of the username? ( 5 - 16 ) = "))
+minimum_limit = int(input("How many characters at least of the username? ( 5 - 16 ) = "))
 thread_amount = int(input("How many threads? ( 1-10 ) "))
 print("----------------------------------")
 
