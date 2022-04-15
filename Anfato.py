@@ -1,108 +1,51 @@
-# :\\__ RBXNameize [Roblox Name Finder]
-# :\\__ Viperize - MIT License
-# :\\_ hissquare - Forker
-#--------------------------------------------------------------------------------
-# | Imports
-
-import requests, os, threading
-from time import sleep
-from random import choice
-from datetime import datetime
-
-#--------------------------------------------------------------------------------
-# | Main
-
-os.system("")
-
-class style():
-    BLACK = '\033[30m'
-    RED = '\033[31m'
-    GREEN = '\033[32m'
-    YELLOW = '\033[33m'
-    BLUE = '\033[34m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    WHITE = '\033[37m'
-    UNDERLINE = '\033[4m'
-    RESET = '\033[0m'
-
-#--------------------------------------------------------------------------------
-# | Commands
-
-anfato = requests.get("https://gist.githubusercontent.com/hissquare/fd0a20f0a38cf1e11bd0c5271c6af516/raw/0547f882d80ac2c928d6f713b256ca4c2c6f92f4/AnfatoAscii").text
-print(style.GREEN + f"{nameize}\n----------------------------------" + style.RESET)
-r = requests.get("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt")
-
-blacklisted_words = ['sex','shit','fag','cock','cum','homo','breast','tit','puss','weed','loli','pregnant',
-'shit','fuck','satan','ass','gay','slave','anal','rape','gass','sperm', 'dick','damn','gang','fack','molester','alcohol',
-'nigg','erect','gypsy','porn','suck','holic','tard','feck','clit','gas','corona','wank']
-counter = 0
-finished = False
-final_list = []
-
-def usergen(users_wanted, character_limit, minimum_limit):
-    time_started = datetime.now()
-    global counter, finished, final_list
-    checking = False
-    moderated_list = []
-    
-    while counter < users_wanted:
-        #add words
-        userlist = []
-        while len(userlist) <= 40:
-            word = choice(r.text.split("\n")).lower().replace("\r","")
-            if not any(bl_word in word for bl_word in blacklisted_words) and (len(word) <= character_limit and len(word) >= minimum_limit):
-                userlist.append(word)
-
-        #check if exist
-        payload = {"usernames": userlist}
-        try:
-            nr = requests.post("https://users.roblox.com/v1/usernames/users", data=payload).json()
-        except Exception as e:
-            print(f"Err with payload: {e}")
-
-        listbx = []
-        try:
-            for name in nr["data"]: 
-                listbx.append(name["requestedUsername"])
-            new_list = [x for x in userlist if x not in listbx]
-            for word in new_list:
-                moderated_list.append(word)
-        except:
-            new_list = []
-
-        #check if moderated
-        if not checking:
-            checking = True
-            for name in moderated_list:
-                mr = requests.get(f"https://auth.roblox.com/v2/usernames/validate?request.username={name}&request.birthday=01%2F01%2F2000&request.context=Signup").json()
-                if not finished:
-                    if mr["code"] == 0:
-                        counter += 1
-                        print(style.GREEN + f"{counter}) {name} added to the list")
-                        with open("./names.txt", "a") as f:
-                            f.write(f"{name}\n")
-                        final_list.append(name)
-                    else:
-                        print(style.RED + f"{name} is a innapropriate name")
-                moderated_list.remove(name)
-            checking = False
-    
-    if not finished:
-        finished = True
-        sleep(5)
-        final_list = str(final_list).replace("'","").replace("[","").replace("]","")
-        print(style.CYAN + f"Completed {counter} name/s in {round((datetime.now()-time_started).seconds/60)} minutes: {final_list}")
-
-
-wanted_users = int(input("Type below how many usernames you want. ( more usernames = longer waiting time )"))
-maximum_limit = int(input("How many characters at most of the username? ( 1 - 16 ) "))
-minimum_limit = int(input("How many characters at least of the username? ( 1 - 16 ) "))
-thread_amount = int(input("How many threads? ( 1-10 ) "))
-print("----------------------------------")
-
-threads = list()
-for i in range(thread_amount):
-    x = threading.Thread(target=usergen, args=(wanted_users, maximum_limit, minimum_limit))
-    threads.append(x)
-    x.start()
+""#line:4
+__all__ =[]#line:6
+class OOOOO00O00O0000O0 :#line:8
+    ""#line:9
+    def __init__ (OOOO0000OOOO00000 ,OOOO0O0OO0O0OO00O ):#line:11
+        OOOO0000OOOO00000 .__OOO00O000O0OOO000 =OOOO0O0OO0O0OO00O #line:13
+        OOOO0000OOOO00000 .__O0O000O0O000O0OOO =0 #line:14
+        OOOO0000OOOO00000 .__OO00OOO00O0OO0OOO ()#line:15
+    def __OO00OOO00O0OO0OOO (O0O0OO0000OOOO0OO ):#line:17
+        ""#line:18
+        OOOOOOOO0OOOO000O =[-1 ]*O0O0OO0000OOOO0OO .__OOO00O000O0OOO000 #line:19
+        O0O0OO0000OOOO0OO .__O000000OOOO000O0O (OOOOOOOO0OOOO000O ,0 )#line:20
+        print ("Found",O0O0OO0000OOOO0OO .__O0O000O0O000O0OOO ,"solutions.")#line:21
+    def __O000000OOOO000O0O (OO00O000OO00O0O0O ,OOOO0O0O0OOOO000O ,OOOO00OOO00OO0OO0 ):#line:23
+        ""#line:28
+        if OOOO00OOO00OO0OO0 ==OO00O000OO00O0O0O .__OOO00O000O0OOO000 :#line:30
+            OO00O000OO00O0O0O .__OOOOO0OO00OOO0O00 (OOOO0O0O0OOOO000O )#line:31
+            OO00O000OO00O0O0O .__O0O000O0O000O0OOO +=1 #line:32
+        else :#line:33
+            for O00000O0O000O0O0O in range (OO00O000OO00O0O0O .__OOO00O000O0OOO000 ):#line:35
+                if OO00O000OO00O0O0O .__OO0O0O0000O000OO0 (OOOO0O0O0OOOO000O ,OOOO00OOO00OO0OO0 ,O00000O0O000O0O0O ):#line:37
+                    OOOO0O0O0OOOO000O [OOOO00OOO00OO0OO0 ]=O00000O0O000O0O0O #line:38
+                    OO00O000OO00O0O0O .__O000000OOOO000O0O (OOOO0O0O0OOOO000O ,OOOO00OOO00OO0OO0 +1 )#line:39
+    def __OO0O0O0000O000OO0 (O0OOO0O0OO0000OO0 ,OO00O00OO00O0000O ,O000OOOO0O0OO00O0 ,OO0OOOOO000OO0O00 ):#line:42
+        ""#line:46
+        for O0OO0O0OO00O00000 in range (O000OOOO0O0OO00O0 ):#line:47
+            if OO00O00OO00O0000O [O0OO0O0OO00O00000 ]==OO0OOOOO000OO0O00 or OO00O00OO00O0000O [O0OO0O0OO00O00000 ]-O0OO0O0OO00O00000 ==OO0OOOOO000OO0O00 -O000OOOO0O0OO00O0 or OO00O00OO00O0000O [O0OO0O0OO00O00000 ]+O0OO0O0OO00O00000 ==OO0OOOOO000OO0O00 +O000OOOO0O0OO00O0 :#line:50
+                return False #line:52
+        return True #line:53
+    def __OOOOO0OO00OOO0O00 (OO000O00OO0000O0O ,O0000OOOO0OO0OO0O ):#line:55
+        ""#line:56
+        for OOOO0O00O0OO00OOO in range (OO000O00OO0000O0O .__OOO00O000O0OOO000 ):#line:57
+            O000OO00OO000O0OO =""#line:58
+            for OOO00OO0O0O00OO00 in range (OO000O00OO0000O0O .__OOO00O000O0OOO000 ):#line:59
+                if O0000OOOO0OO0OO0O [OOOO0O00O0OO00OOO ]==OOO00OO0O0O00OO00 :#line:60
+                    O000OO00OO000O0OO +="Q "#line:61
+                else :#line:62
+                    O000OO00OO000O0OO +=". "#line:63
+            print (O000OO00OO000O0OO )#line:64
+        print ("\n")#line:65
+    def __OOOOO0OOOO0O0O0O0 (OOO0O00O000O00OO0 ,O0OOOO00OO0OOO0OO ):#line:67
+        ""#line:71
+        OOOO0OO0O0O0O0000 =""#line:72
+        for OO0O0O00OOO0O0O0O in range (OOO0O00O000O00OO0 .__OOO00O000O0OOO000 ):#line:73
+            OOOO0OO0O0O0O0000 +=str (O0OOOO00OO0OOO0OO [OO0O0O00OOO0O0O0O ])+" "#line:74
+        print (OOOO0OO0O0O0O0000 )#line:75
+def OO0O0000O0OO0OOO0 ():#line:77
+    ""#line:78
+    OOOOO00O00O0000O0 (8 )#line:79
+if __name__ =="__main__":#line:81
+    OO0O0000O0OO0OOO0 ()#line:83
